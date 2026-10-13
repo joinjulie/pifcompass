@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+.join-btn{
+    display:block;
+    width:100%;
+    margin-top:20px;
+    background:#cc0000;
+    color:#ffffff;
+    text-align:center;
+    padding:15px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:800;
+    transition:.3s;
+}
+
+.join-btn:hover{
+    background:#990000;
+}
+:root{
+    --white:#ffffff;
+    --black:#000000;
+    --red:#cc0000;
+    --red-dark:#990000;
+    --gray:#555555;
+    --border:#dddddd;
+    --light:#f8f8f8;
+    --shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--white);
+    color:var(--black);
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+}
+
+.topbar{
+    background:var(--black);
+    color:var(--white);
+    text-align:center;
+    padding:12px 20px;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+.navbar{
+    background:var(--white);
+    border-bottom:4px solid var(--red);
+    padding:20px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:900;
+    color:var(--red);
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links a{
+    color:var(--black);
+    font-weight:700;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--red);
+}
+
+.hero{
+    background:
+    linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)),
+    url('https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png/:/rs=w:710,cg:true,m?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+    padding:120px 20px;
+    text-align:center;
+
+    border-bottom:6px solid var(--red);
+}
+
+.container{
+    width:100%;
+    max-width:1300px;
+    margin:auto;
+}
+
+.hero h1{
+    font-size:72px;
+    line-height:1.05;
+    color:var(--red);
+    font-weight:900;
+    margin-bottom:25px;
+    text-transform:uppercase;
+}
+
+.hero p{
+    max-width:950px;
+    margin:auto;
+    font-size:21px;
+    color:var(--black);
+}
+
+.hero-buttons{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:16px 28px;
+    border-radius:12px;
+    font-weight:800;
+    transition:.3s;
+    font-size:15px;
+    letter-spacing:.5px;
+}
+
+.btn-primary{
+    background:var(--red);
+    color:var(--white);
+}
+
+.btn-primary:hover{
+    background:var(--red-dark);
+    transform:translateY(-2px);
+}
+
+.btn-dark{
+    background:var(--black);
+    color:var(--white);
+}
+
+.btn-dark:hover{
+    background:#222;
+    transform:translateY(-2px);
+}
+
+.section{
+    padding:80px 20px;
+}
+
+.section-title{
+    font-size:42px;
+    font-weight:900;
+    margin-bottom:12px;
+    color:var(--black);
+}
+
+.section-subtitle{
+    color:var(--gray);
+    margin-bottom:40px;
+    font-size:18px;
+}
+
+.card{
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:40px;
+    box-shadow:var(--shadow);
+}
+
+.finder-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+label{
+    display:block;
+    font-weight:800;
+    margin-bottom:8px;
+    color:var(--black);
+}
+
+select,
+input{
+    width:100%;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    font-size:16px;
+    background:var(--white);
+    color:var(--black);
+}
+
+.find-btn{
+    width:100%;
+    margin-top:31px;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:var(--red);
+    color:var(--white);
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.find-btn:hover{
+    background:var(--red-dark);
+}
+
+.notice{
+    margin-top:30px;
+    background:#fff5f5;
+    border-left:5px solid var(--red);
+    border-radius:12px;
+    padding:20px;
+    color:var(--black);
+    font-size:15px;
+}
+
+.results-grid{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.casino-card{
+    background:var(--white);
+    border:1px solid #ececec;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.casino-card:hover{
+    transform:translateY(-5px);
+}
+
+.casino-image{
+    height:200px;
+    overflow:hidden;
+}
+
+.casino-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.casino-content{
+    padding:28px;
+}
+
+.rank{
+    display:inline-block;
+    background:var(--black);
+    color:var(--white);
+    padding:7px 12px;
+    border-radius:8px;
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:16px;
+}
+
+.casino-title{
+    font-size:30px;
+    font-weight:900;
+    color:var(--black);
+    margin-bottom:12px;
+}
+
+.casino-content p{
+    color:#444;
+    margin-bottom:20px;
+}
+
+.feature-list{
+    list-style:none;
+    margin-bottom:25px;
+}
+
+.feature-list li{
+    position:relative;
+    padding-left:24px;
+    margin-bottom:10px;
+    color:var(--black);
+}
+
+.feature-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--red);
+    font-weight:900;
+}
+
+.card-buttons{
+    display:flex;
+    gap:12px;
+}
+
+.small-btn{
+    flex:1;
+    text-align:center;
+    padding:13px;
+    border-radius:10px;
+    font-weight:800;
+    transition:.3s;
+}
+
+.visit-btn{
+    background:var(--red);
+    color:var(--white);
+}
+
+.visit-btn:hover{
+    background:var(--red-dark);
+}
+
+.rules-btn{
+    background:var(--black);
+    color:var(--white);
+}
+
+.rules-btn:hover{
+    background:#222;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.info-box{
+    background:var(--white);
+    border-top:6px solid var(--red);
+    border-radius:18px;
+    padding:35px;
+    box-shadow:var(--shadow);
+}
+
+.info-box h3{
+    font-size:28px;
+    margin-bottom:14px;
+    color:var(--black);
+}
+
+.info-box p{
+    color:var(--gray);
+}
+
+.footer{
+    background:var(--black);
+    color:var(--white);
+    padding:70px 20px;
+    margin-top:60px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+}
+
+.footer h4{
+    font-size:22px;
+    margin-bottom:18px;
+}
+
+.footer p,
+.footer a{
+    color:#cccccc;
+    margin-bottom:10px;
+    display:block;
+}
+
+.footer a:hover{
+    color:var(--white);
+}
+
+.copyright{
+    margin-top:45px;
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:20px;
+    text-align:center;
+    color:#888;
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .section-title{
+        font-size:34px;
+    }
+
+}
+
+
+/* ===== PIF Compass additions: gate + interactive maps ===== */
+#gate{position:fixed;inset:0;background:#0a0a0a;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;}
+.gate-card{background:#141414;border:2px solid #cc0000;border-radius:16px;padding:40px 32px;max-width:420px;width:100%;text-align:center;color:#fff;box-shadow:0 0 60px rgba(204,0,0,.35);}
+.gate-logo{font-weight:900;font-size:30px;color:#cc0000;letter-spacing:1px;margin-bottom:6px;}
+.gate-card h2{margin:0 0 10px;font-size:22px;color:#fff;}
+.gate-card p{color:#bbb;font-size:14px;line-height:1.5;margin:0 0 20px;}
+#gate-input{width:100%;padding:14px;border-radius:10px;border:1px solid #444;background:#1c1c1c;color:#fff;font-size:16px;text-align:center;letter-spacing:3px;box-sizing:border-box;}
+#gate-btn{width:100%;margin-top:14px;padding:14px;border:none;border-radius:10px;background:#cc0000;color:#fff;font-size:16px;font-weight:800;cursor:pointer;letter-spacing:1px;}
+#gate-btn:hover{background:#a80000;}
+#gate-error{color:#ff6666;font-size:13px;margin-top:10px;min-height:18px;}
+.country-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:18px 0 6px;}
+.country-btn{padding:14px 30px;font-size:17px;font-weight:800;border:2px solid #000;background:#000;color:#fff;border-radius:12px;cursor:pointer;}
+.country-btn:hover{background:#333;border-color:#333;}
+.country-btn.active{background:#cc0000;border-color:#cc0000;}
+#tile-map{display:grid;gap:6px;justify-content:center;margin:12px auto 4px;max-width:660px;}
+#tile-map.usa{grid-template-columns:repeat(12,1fr);}
+#tile-map.canada{grid-template-columns:repeat(8,1fr);max-width:460px;}
+.tile{aspect-ratio:1/1;background:#cc0000;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-weight:800;min-width:0;transition:transform .12s;}
+.tile .abbr{font-size:15px;line-height:1;}
+.tile .cnt{font-size:11px;font-weight:600;opacity:.92;margin-top:2px;}
+.tile.none{background:#3a3a3a;}
+.tile:hover{transform:scale(1.1);}
+.tile.sel{outline:3px solid #fff;}
+.tile.empty{background:transparent;cursor:default;}
+.map-legend{text-align:center;color:#bbb;font-size:13px;margin:10px 0 0;}
+.legend-num{display:inline-flex;align-items:center;justify-content:center;background:#cc0000;color:#fff;border-radius:50%;width:20px;height:20px;font-size:11px;font-weight:800;margin-right:4px;}
+@media(max-width:600px){.tile .abbr{font-size:10px;}.tile .cnt{font-size:9px;}#tile-map{gap:4px;}}
+
+</style>
+
+  <title>PIF Compass — AMOE Approved In Your State | pifcompass.com</title>
+</head>
+
+<body>
+
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-logo">PIF Compass</div>
+    <h2>Members Only</h2>
+    <p>This resource is exclusively for Pay It Forward Learning Center members. Enter your member passcode to continue.</p>
+    <input type="password" id="gate-input" placeholder="Enter passcode" autocomplete="off">
+    <button id="gate-btn">Unlock Compass</button>
+    <div id="gate-error"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var CODE = "PIFCONNECT";
+  var gate = document.getElementById('gate');
+  if (sessionStorage.getItem('pifcompass_auth') === '1') { gate.style.display = 'none'; return; }
+  function unlock(){
+    var v = document.getElementById('gate-input').value.trim();
+    if (v.toUpperCase() === CODE) { sessionStorage.setItem('pifcompass_auth','1'); gate.style.display = 'none'; }
+    else { document.getElementById('gate-error').textContent = 'Incorrect passcode. Please try again.'; }
+  }
+  document.getElementById('gate-btn').addEventListener('click', unlock);
+  document.getElementById('gate-input').addEventListener('keydown', function(e){ if(e.key === 'Enter') unlock(); });
+})();
+</script>
+
+
+<header class="navbar">
+
+</header>
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1>PAY IT FORWARD<br>AMOE COMPASS</h1>
+
+        <p>
+            Navigate sweepstakes casinos with confidence.
+            The Pay It Forward AMOE Compass helps you locate
+            casino platforms available in your state or province,
+            review eligibility, and stay updated on changing rules
+            and restrictions.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="compass-map">
+    <div class="container">
+        <div class="card">
+            <h2 class="section-title">
+               Find Your Green Light
+            </h2>
+            <p class="section-subtitle">
+                Step 1 — select your country, then tap your state or province on the map to see your eligible casinos.
+            </p>
+            <div class="country-btns">
+                <button class="country-btn" data-country="USA">United States</button>
+                <button class="country-btn" data-country="Canada">Canada</button>
+            </div>
+            <div id="map-wrap" style="display:none">
+                <p class="section-subtitle" id="map-prompt">Step 2 — tap your state:</p>
+                <div id="tile-map"></div>
+                <p class="map-legend"><span class="legend-num">3</span> = casinos available in that state or province</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="finder">
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2 class="section-title">
+               AMOE Compass Search
+            </h2>
+
+            <p class="section-subtitle">
+                Select your country and state/province to view eligible sweepstakes casino platforms.
+            </p>
+
+            <div class="finder-grid">
+
+                <div>
+
+                    <label>Country</label>
+
+                    <select id="country">
+                        <option value="USA">United States</option>
+                        <option value="Canada">Canada</option>
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>State / Province</label>
+
+                    <select id="location">
+
+                        <option value="">Choose Location</option>
+
+                        <optgroup label="United States">
+
+                            <option value="Alabama">Alabama</option>
+                            <option value="Alaska">Alaska</option>
+                            <option value="Arizona">Arizona</option>
+                            <option value="Arkansas">Arkansas</option>
+                            <option value="California">California</option>
+                            <option value="Colorado">Colorado</option>
+                            <option value="Connecticut">Connecticut</option>
+                            <option value="Delaware">Delaware</option>
+                            <option value="Florida">Florida</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Hawaii">Hawaii</option>
+                            <option value="Idaho">Idaho</option>
+                            <option value="Illinois">Illinois</option>
+                            <option value="Indiana">Indiana</option>
+                            <option value="Iowa">Iowa</option>
+                            <option value="Kansas">Kansas</option>
+                            <option value="Kentucky">Kentucky</option>
+                            <option value="Louisiana">Louisiana</option>
+                            <option value="Maine">Maine</option>
+                            <option value="Maryland">Maryland</option>
+                            <option value="Massachusetts">Massachusetts</option>
+                            <option value="Michigan">Michigan</option>
+                            <option value="Minnesota">Minnesota</option>
+                            <option value="Mississippi">Mississippi</option>
+                            <option value="Missouri">Missouri</option>
+                            <option value="Montana">Montana</option>
+                            <option value="Nebraska">Nebraska</option>
+                            <option value="Nevada">Nevada</option>
+                            <option value="New Hampshire">New Hampshire</option>
+                            <option value="New Jersey">New Jersey</option>
+                            <option value="New Mexico">New Mexico</option>
+                            <option value="New York">New York</option>
+                            <option value="North Carolina">North Carolina</option>
+                            <option value="North Dakota">North Dakota</option>
+                            <option value="Ohio">Ohio</option>
+                            <option value="Oklahoma">Oklahoma</option>
+                            <option value="Oregon">Oregon</option>
+                            <option value="Pennsylvania">Pennsylvania</option>
+                            <option value="Rhode Island">Rhode Island</option>
+                            <option value="South Carolina">South Carolina</option>
+                            <option value="South Dakota">South Dakota</option>
+                            <option value="Tennessee">Tennessee</option>
+                            <option value="Texas">Texas</option>
+                            <option value="Utah">Utah</option>
+                            <option value="Vermont">Vermont</option>
+                            <option value="Virginia">Virginia</option>
+                            <option value="Washington">Washington</option>
+                            <option value="West Virginia">West Virginia</option>
+                            <option value="Wisconsin">Wisconsin</option>
+                            <option value="Wyoming">Wyoming</option>
+
+                        </optgroup>
+
+                        <optgroup label="Canada">
+
+                            <option value="Alberta">Alberta</option>
+                            <option value="British Columbia">British Columbia</option>
+                            <option value="Manitoba">Manitoba</option>
+                            <option value="New Brunswick">New Brunswick</option>
+                            <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                            <option value="Northwest Territories">Northwest Territories</option>
+                            <option value="Nova Scotia">Nova Scotia</option>
+                            <option value="Nunavut">Nunavut</option>
+                            <option value="Ontario">Ontario</option>
+                            <option value="Prince Edward Island">Prince Edward Island</option>
+                            <option value="Quebec">Quebec</option>
+                            <option value="Saskatchewan">Saskatchewan</option>
+                            <option value="Yukon">Yukon</option>
+
+                        </optgroup>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <button class="find-btn" onclick="findCasinos()">
+                        FIND CASINOS
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="notice">
+                <strong>IMPORTANT:</strong>
+                Always review the Terms & Conditions and Sweeps Rules
+                before participating in any sweepstakes promotions.
+            </div>
+
+            <div class="results-grid" id="results"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            AMOE Ranking System
+        </h2>
+
+        <p class="section-subtitle">
+            Rankings are based on community feedback, redemption reliability,
+            promotions, and verification experiences.
+        </p>
+
+        <div class="info-grid">
+
+            <div class="info-box">
+
+                <h3>High Ranking</h3>
+
+                <p>
+                    Reliable redemption history, strong user feedback,
+                    and consistent promotional opportunities.
+                </p>
+
+            </div>
+
+            <div class="info-box">
+
+                <h3>Mid Ranking</h3>
+
+                <p>
+                    Good opportunities overall but may experience
+                    occasional delays or verification reviews.
+                </p>
+
+            </div>
+
+            <div class="info-box">
+
+                <h3>Low Ranking</h3>
+
+                <p>
+                    Limited promotions, verification concerns,
+                    or inconsistent player feedback.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<script>
+const locations = { /* USA CASINO */ USA: [
+"Alabama",
+"Alaska",
+"Arizona",
+"Arkansas",
+"California",
+"Colorado",
+"Connecticut",
+"Delaware",
+"Florida",
+"Georgia",
+"Hawaii",
+"Idaho",
+"Illinois",
+"Indiana",
+"Iowa",
+"Kansas",
+"Kentucky",
+"Louisiana",
+"Maine",
+"Maryland",
+"Massachusetts",
+"Michigan",
+"Minnesota",
+"Mississippi",
+"Missouri",
+"Montana",
+"Nebraska",
+"Nevada",
+"New Hampshire",
+"New Jersey",
+"New Mexico",
+"New York",
+"North Carolina",
+"North Dakota",
+"Ohio",
+"Oklahoma",
+"Oregon",
+"Pennsylvania",
+"Rhode Island",
+"South Carolina",
+"South Dakota",
+"Tennessee",
+"Texas",
+"Utah",
+"Vermont",
+"Virginia",
+"Washington",
+"West Virginia",
+"Wisconsin",
+"Wyoming"
+
+],
+
+Canada:[
+
+"Alberta",
+"British Columbia",
+"Manitoba",
+"New Brunswick",
+"Newfoundland and Labrador",
+"Northwest Territories",
+"Nova Scotia",
+"Nunavut",
+"Ontario",
+"Prince Edward Island",
+"Quebec",
+"Saskatchewan",
+"Yukon"
+
+]
+
+};
+
+const countrySelect =
+document.getElementById("country");
+
+const locationSelect =
+document.getElementById("location");
+
+function populateLocations(){
+
+const selectedCountry =
+countrySelect.value;
+
+locationSelect.innerHTML =
+'<option value="">Choose Location</option>';
+
+locations[selectedCountry].forEach(location => {
+
+const option =
+document.createElement("option");
+
+option.value = location;
+
+option.textContent = location;
+
+locationSelect.appendChild(option);
+
+});
+
+}
+
+countrySelect.addEventListener(
+"change",
+populateLocations
+);
+
+populateLocations();
+
+const casinos = [
+
+/* =========================================================
+USA CASINOS
+========================================================= */
+
+{
+name:"Ace Casino",
+rank:"Medium Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Iowa","Kansas","Maryland","Massachusetts","Minnesota","Mississippi","Missouri",
+"Nebraska","New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oregon","South Carolina",
+"South Dakota","Texas","Utah","Vermont","Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"4 SC AMOE • Age 21+",
+
+features:[
+"4 SC AMOE",
+"21+ Platform",
+"USA Eligible"
+],
+
+button:"https://www.ace.com/?r=d7dfdfef%2F28844916"
+},
+
+{
+name:"Acorn Fun",
+rank:"Medium Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Kansas","Maryland","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska",
+"New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+"Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","West Virginia",
+"Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"2 SC AMOE • Age 18+",
+
+features:[
+"2 SC AMOE",
+"18+ Platform",
+"USA Eligible"
+],
+
+button:"http://tpmr.com/r/98984"
+},
+
+{
+name:"Baba Casino",
+rank:"Medium Ranking",
+country:"USA",
+
+states:["Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Illinois","Kansas",
+"Kentucky","Massachusetts","Minnesota","Missouri","New Hampshire","New Mexico","North Carolina","Ohio",
+"Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Texas","Utah",
+"Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"2 SC AMOE • Age 21+",
+
+features:[
+"2 SC AMOE",
+"21+ Platform",
+"USA Eligible"
+],
+
+button:"http://tpmr.com/r/99000"
+},
+
+{
+name:"Chumba Casino",
+rank:"High Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Iowa","Kansas","Kentucky","Maryland","Massachusetts","Minnesota","Missouri",
+"Nebraska","New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon",
+"Pennsylvania","Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia",
+"Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"5 SC AMOE • Age 21+",
+
+features:[
+"Daily Rewards",
+"Digital Entries",
+"5 SC AMOE"
+],
+
+button:"https://chumbacasino.com/"
+},
+
+{
+name:"Coin Wizard",
+rank:"High Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Delaware","Florida","Georgia",
+"Hawaii","Illinois","Kansas","Kentucky","Maryland","Massachusetts","Minnesota","Mississippi",
+"Missouri","Nebraska","New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma",
+"Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont",
+"Virginia","West Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"6 SC AMOE • Age 18+",
+
+features:[
+"Quick Pay Outs",
+"Easy Addition Monthly (5 AMOE per month)",
+"6 SC AMOE",
+],
+
+button:"https://www.coinwizardgames.com/"
+},
+
+{
+name:"Epic Sweeps ",
+rank:"High Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Indiana","Iowa","Kansas","Kentucky","Maine","Maryland","Massachusetts",
+"Minnesota","Mississippi","Missouri","Nebraska","New Hampshire","New Mexico","North Carolina","North Dakota",
+"Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Texas",
+"Utah","Vermont","Virginia","West Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"5 SC AMOE • Age 21+",
+
+features:[
+"Daily Rewards",
+"Mail-In Entries",
+"5 SC AMOE",
+],
+
+button:"https://epicsweep.us/"
+},
+
+
+{
+name:"Fortune Wins",
+rank:"Low Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Iowa","Kansas","Kentucky","Maryland","Massachusetts","Minnesota","Mississippi","Missouri",
+"Nebraska","New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon",
+"Pennsylvania","Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia",
+"West Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"500 FC AMOE • Age 18+",
+
+features:[
+"500 FC AMOE",
+"18+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/99001"
+},
+
+{
+name:"Get Zoot",
+rank:"High Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Delaware","Florida","Georgia",
+"Hawaii","Illinois","Iowa","Kansas","Kentucky","Maine","Maryland","Massachusetts",
+"Minnesota","Mississippi","Missouri","Nebraska","New Hampshire","New Mexico","North Carolina","North Dakota",
+"Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Texas",
+"Utah","Vermont","Virginia","West Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"2 SC AMOE • Age 18+",
+
+features:[
+"Daily Rewards",
+"Mail-In Entries",
+"Quick Pay Out",
+],
+
+button:"https://getzoot.com/"
+},
+
+{
+name:"Global Poker",
+rank:"High Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Iowa","Kansas","Kentucky","Maryland","Massachusetts","Minnesota","Missouri",
+"Nebraska","New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon",
+"Pennsylvania","Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia",
+"Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"5 SC AMOE • Age 21+",
+
+features:[
+"5 SC AMOE",
+"Digital Entries",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98986"
+},
+
+{
+name:"Golden Hearts",
+rank:"High Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Delaware","Florida","Georgia",
+"Hawaii","Illinois","Kansas","Kentucky","Maryland","Massachusetts","Minnesota","Mississippi",
+"Missouri","Nebraska","New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma",
+"Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont",
+"Virginia","West Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"6 SC AMOE • Age Varies by State",
+
+features:[
+"6 SC AMOE",
+"AL/NE 19+",
+"MS/PR 21+",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98987"
+},
+
+{
+name:"Happy Ending",
+rank:"Low Ranking",
+country:"USA",
+
+states:[
+"Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii","Illinois","Indiana","Iowa","Kansas","Maine","Maryland","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska","New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","Wisconsin"
+],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"5 SC AMOE • Age 21+",
+
+features:[
+"Daily Rewards",
+"5 SC AMOE",
+],
+
+button:"http://tpmr.com/r/99008"
+},
+
+{
+name:"Hello Millions",
+rank:"Medium Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Iowa","Kansas","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska",
+"New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+"South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","Wisconsin"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"4 SC AMOE • Age 18+",
+
+features:[
+"4 SC AMOE",
+"18+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/99011"
+},
+
+{
+name:"High 5 Casino",
+rank:"High Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arkansas","Colorado","Florida","Georgia","Hawaii","Illinois",
+"Kansas","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska","New Hampshire","New Mexico",
+"North Carolina","North Dakota","Ohio","Oklahoma","Oregon","South Carolina","South Dakota","Texas",
+"Utah","Vermont","Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"3 SC AMOE • Age 21+",
+
+features:[
+"3 SC AMOE",
+"21+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/99010"
+},
+
+{
+name:"Jackpota",
+rank:"Medium Ranking",
+country:"USA",
+
+states:["Alaska","Arizona","Arkansas","Colorado","Florida","Hawaii","Illinois","Iowa",
+"Kansas","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska","New Hampshire","New Mexico",
+"North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina",
+"South Dakota","Texas","Utah","Vermont","Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"4 SC AMOE • Age 21+",
+
+features:[
+"4 SC AMOE",
+"21+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98988"
+},
+
+{
+name:"Lavish Luck",
+rank:"Low Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Kansas","Maryland","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska",
+"New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+"Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","West Virginia",
+"Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"2 SC AMOE • Age 18+",
+
+features:[
+"2 SC AMOE",
+"18+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/99002"
+},
+
+{
+name:"Legendz",
+rank:"Low Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Delaware","Florida","Georgia",
+"Hawaii","Illinois","Indiana","Iowa","Kansas","Kentucky","Maine","Maryland",
+"Massachusetts","Minnesota","Mississippi","Missouri","Nebraska","New Hampshire","New Mexico","North Carolina",
+"North Dakota","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Texas",
+"Utah","Vermont","Virginia","West Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"3 SC AMOE • Age 18+",
+
+features:[
+"3 SC AMOE",
+"18+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98980"
+},
+
+{
+name:"Lonestar",
+rank:"Low Ranking",
+country:"USA",
+
+states:[
+"Alabama","Alaska","Arizona","Arkansas","Colorado","Florida",
+"Georgia","Hawaii","Illinois","Indiana","Iowa","Kansas",
+"Maine","Massachusetts","Minnesota","Mississippi",
+"Missouri","Nebraska","New Hampshire","New Mexico",
+"North Carolina","North Dakota","Ohio","Oklahoma",
+"Oregon","Pennsylvania","South Carolina","South Dakota",
+"Texas","Utah","Vermont","Virginia","Wisconsin"
+],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"1 SC AMOE • Age 21+",
+
+features:[
+"1 SC AMOE",
+"21+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98989"
+},
+
+{
+name:"Lucky Hands",
+rank:"Medium Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Iowa","Kansas","Kentucky","Maryland","Massachusetts","Minnesota","Mississippi",
+"Missouri","Nebraska","New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma",
+"Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont",
+"Virginia","West Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"1 SC AMOE • Age 18+",
+
+features:[
+"1 SC AMOE",
+"18+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98990"
+},
+
+{
+name:"Luckyland Casino",
+rank:"High Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Iowa","Kansas","Kentucky","Maryland","Massachusetts","Minnesota","Missouri",
+"Nebraska","New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon",
+"Pennsylvania","Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia",
+"Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"5 SC AMOE • Age 21+",
+
+features:[
+"5 SC AMOE",
+"Digital Entries",
+"USA Eligible",
+],
+
+button:"https://luckylandcasino.com/"
+},
+
+
+{
+name:"McLuck",
+rank:"High Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Iowa","Kansas","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska",
+"New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+"Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","Wisconsin",
+"Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"4 SC AMOE • Age 21+",
+
+features:[
+"4 SC AMOE",
+"21+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98981"
+},
+
+{
+name:"Mega Bonanza",
+rank:"Low Ranking",
+country:"USA",
+
+states:["Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii","Illinois",
+"Iowa","Kansas","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska","New Hampshire",
+"New Mexico","North Carolina","North Dakota","Ohio","Oregon","Pennsylvania","Rhode Island","South Carolina",
+"South Dakota","Texas","Utah","Vermont","Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"4 SC AMOE • Age 21+",
+
+features:[
+"4 SC AMOE",
+"21+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98991"
+},
+
+{
+name:"MODO",
+rank:"Medium Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arkansas","Colorado","Florida","Georgia","Hawaii","Illinois",
+"Iowa","Kansas","Kentucky","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska",
+"New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oregon","Pennsylvania","South Carolina",
+"South Dakota","Texas","Utah","Vermont","Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"3 SC AMOE • Age 21+",
+
+features:[
+"3 SC AMOE",
+"21+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98992"
+},
+
+{
+name:"Moozi",
+rank:"Medium Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Indiana","Kansas","Kentucky","Massachusetts","Minnesota","Missouri","Nebraska",
+"New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+"Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","West Virginia",
+"Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"3 SC AMOE • Age 18+",
+
+features:[
+"Mail-In Entries",
+"Quick Pay Out",
+],
+
+button:"https://moozi.com/"
+},
+
+{
+name:"Playfame",
+rank:"Low Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Iowa","Kansas","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska",
+"New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+"Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","Wisconsin",
+"Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"4 SC AMOE • Age 21+",
+
+features:[
+"4 SC AMOE",
+"21+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98993"
+},
+
+{
+name:"Pulsz",
+rank:"Medium Ranking",
+country:"USA",
+
+states:["Alaska","Arkansas","Colorado","Delaware","Florida","Georgia","Hawaii","Illinois",
+"Indiana","Iowa","Kansas","Kentucky","Massachusetts","Minnesota","Missouri","Nebraska",
+"New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+"Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","Wisconsin",
+"Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"5 SC AMOE • Age 21+",
+
+features:[
+"5 SC AMOE",
+"21+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98982"
+},
+
+{
+name:"Pulsz Bingo",
+rank:"Medium Ranking",
+country:"USA",
+
+states:["Alaska","Arkansas","Colorado","Delaware","Florida","Georgia","Hawaii","Illinois",
+"Indiana","Iowa","Kansas","Kentucky","Massachusetts","Minnesota","Missouri","Nebraska",
+"New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+"Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","Wisconsin",
+"Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"5 SC AMOE • Age 21+",
+
+features:[
+"5 SC AMOE",
+"21+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98983"
+},
+
+{
+name:"Punt",
+rank:"Low Ranking",
+country:"USA",
+
+states:[
+"Alabama","Alaska","Arizona","Arkansas","Colorado","Delaware","Florida","Georgia","Hawaii","Indiana","Iowa","Kansas","Kentucky","Maine","Maryland","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska","New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","Wisconsin","Wyoming"
+],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"5 SC AMOE • Age 21+",
+
+features:[
+"5 SC AMOE",
+"21+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/99003"
+},
+
+
+{
+name:"Real Prize",
+rank:"Low Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Iowa","Kansas","Kentucky","Maryland","Massachusetts","Minnesota","Mississippi",
+"Missouri","Nebraska","New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma",
+"Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont",
+"Virginia","West Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+description:"1 SC AMOE • Age 18+",
+
+features:[
+"1 SC AMOE",
+"18+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/99004"
+},
+{
+name:"Rolla",
+rank:"High Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Delaware","Florida","Georgia",
+"Hawaii","Kansas","Kentucky","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska",
+"New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+"Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","West Virginia",
+"Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+description:"3 SC AMOE • Age 18+",
+
+features:[
+"3 SC AMOE",
+"18+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98994"
+},
+
+{
+name:"BoaterBet",
+rank:"Low Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Delaware","Florida",
+"Georgia","Hawaii","Illinois","Indiana","Iowa","Kansas","Kentucky","Maine",
+"Maryland","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska","New Hampshire","New Mexico",
+"New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island",
+"South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","West Virginia",
+"Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+description:"3 SC AMOE • Age 18+",
+
+features:[
+"3 SC AMOE",
+"18+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/99009"
+},
+
+{
+name:"SpinBlitz",
+rank:"Low Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Iowa","Kansas","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska",
+"New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+"Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","Wisconsin",
+"Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+description:"4 SC AMOE • Age 21+",
+
+features:[
+"4 SC AMOE",
+"21+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98995"
+},
+
+{
+name:"Spree",
+rank:"Low Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Florida","Georgia","Hawaii",
+"Illinois","Iowa","Kansas","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska",
+"New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+"Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","Wisconsin",
+"Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+description:"4 SC AMOE • Age 18+",
+
+features:[
+"4 SC AMOE",
+"18+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/98996"
+},
+
+{
+name:"Stake",
+rank:"Medium Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arkansas","Colorado","Florida","Georgia","Hawaii","Iowa",
+"Kansas","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska","New Hampshire","New Mexico",
+"North Carolina","North Dakota","Ohio","Oklahoma","Oregon","South Carolina","South Dakota","Texas",
+"Utah","Virginia","Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+description:"5 SC AMOE • Age 21+",
+
+features:[
+"5 SC AMOE",
+"21+ Platform",
+"USA Eligible",
+],
+
+button:"http://tpmr.com/r/99007"
+},
+
+{
+name:"Wow Vegas",
+rank:"Low Ranking",
+country:"USA",
+
+states:["Alabama","Alaska","Arizona","Arkansas","Colorado","Delaware","Florida","Georgia",
+"Hawaii","Kansas","Kentucky","Massachusetts","Minnesota","Mississippi","Missouri","Nebraska",
+"New Hampshire","New Mexico","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+"Rhode Island","South Carolina","South Dakota","Texas","Utah","Vermont","Virginia","West Virginia",
+"Wisconsin","Wyoming"],
+
+image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+description:"3 SC AMOE • Age 18+",
+
+features:[
+"5 SC AMOE",
+"21+ Platform",
+"USA Eligible",
+"Long Wait Time for Drops"
+],
+
+button:"http://tpmr.com/r/98997"
+},
+
+/* =========================
+CANADA CASINOS
+========================= */
+{
+    name:"Acorn Fun",
+    rank:"Medium Ranking",
+    country:"Canada",
+
+    states:["Alberta","British Columbia","Manitoba","New Brunswick","Newfoundland and Labrador","Northwest Territories","Nova Scotia","Nunavut","Prince Edward Island","Saskatchewan","Yukon"],
+
+    image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+    description:"2 SC AMOE • Age 18+",
+
+    features:[
+        "2 SC AMOE",
+        "18+ Platform",
+        "Excludes Ontario & Quebec"
+    ],
+
+    button:"http://tpmr.com/r/98984"
+
+},
+
+{
+    name:"Fortune Wins",
+    rank:"High Ranking",
+    country:"Canada",
+
+    states:["Alberta","British Columbia","Manitoba","New Brunswick","Newfoundland and Labrador","Northwest Territories","Nova Scotia","Nunavut","Prince Edward Island","Saskatchewan","Yukon"],
+
+    image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+    description:"500 FC AMOE • Age 18+",
+
+    features:[
+        "500 FC AMOE",
+        "18+ Platform",
+        "Excludes Ontario & Quebec"
+    ],
+
+    button:"http://tpmr.com/r/99001"
+
+},
+
+{
+    name:"Lavish Luck",
+    rank:"Low Ranking",
+    country:"Canada",
+
+    states:["Alberta","British Columbia","Manitoba","New Brunswick","Newfoundland and Labrador","Northwest Territories","Nova Scotia","Nunavut","Prince Edward Island","Saskatchewan","Yukon"],
+
+    image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+    description:"2 SC AMOE • Age 18+",
+
+    features:[
+        "2 SC AMOE",
+        "18+ Platform",
+        "Excludes Ontario & Quebec"
+    ],
+
+    button:"http://tpmr.com/r/99002"
+
+},
+
+{
+    name:"McLuck",
+    rank:"High Ranking",
+    country:"Canada",
+
+    states:["Alberta","British Columbia","Manitoba","New Brunswick","Newfoundland and Labrador","Northwest Territories","Nova Scotia","Nunavut","Prince Edward Island","Saskatchewan","Yukon"],
+
+    image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+    description:"4 SC AMOE • Age 21+",
+
+    features:[
+        "4 SC AMOE",
+        "21+ Platform",
+        "Excludes Quebec"
+    ],
+
+    button:"http://tpmr.com/r/98981"
+
+},
+
+{
+    name:"Rolla",
+    rank:"High Ranking",
+    country:"Canada",
+
+    states:["Alberta","British Columbia","Manitoba","New Brunswick","Newfoundland and Labrador","Northwest Territories","Nova Scotia","Nunavut","Prince Edward Island","Saskatchewan","Yukon"],
+
+    image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+    description:"3 SC AMOE • Age 18+",
+
+    features:[
+        "3 SC AMOE",
+        "18+ Platform",
+        "Canada Eligible"
+    ],
+
+    button:"http://tpmr.com/r/98994"
+
+},
+
+{
+    name:"BoaterBet",
+    rank:"Medium Ranking",
+    country:"Canada",
+
+    states:["Alberta","British Columbia","Manitoba","New Brunswick","Newfoundland and Labrador","Northwest Territories","Nova Scotia","Nunavut","Prince Edward Island","Saskatchewan","Yukon"],
+
+    image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+    description:"3 SC AMOE • Age 18+",
+
+    features:[
+        "3 SC AMOE",
+        "18+ Platform",
+        "Canada Eligible"
+    ],
+
+    button:"http://tpmr.com/r/98996"
+
+},
+
+{
+    name:"Wow Vegas",
+    rank:"Medium Ranking",
+    country:"Canada",
+
+    states:["Alberta","British Columbia","Manitoba","New Brunswick","Newfoundland and Labrador","Northwest Territories","Nova Scotia","Nunavut","Prince Edward Island","Saskatchewan","Yukon"],
+
+    image:"https://img1.wsimg.com/isteam/ip/6941cbb5-6e8b-470b-9cbf-75b2b9f4b7dc/AMOE-APPROVED.png",
+
+    description:"3 SC AMOE • Age 21+",
+
+    features:[
+        "3 SC AMOE",
+        "18+ Platform",
+        "Canada Eligible"
+    ],
+
+    button:"http://tpmr.com/r/98997"
+
+}
+
+];
+
+/* ===== Interactive tile maps ===== */
+const US_NAMES = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
+const CA_NAMES = {AB:"Alberta",BC:"British Columbia",MB:"Manitoba",NB:"New Brunswick",NL:"Newfoundland and Labrador",NS:"Nova Scotia",NT:"Northwest Territories",NU:"Nunavut",ON:"Ontario",PE:"Prince Edward Island",QC:"Quebec",SK:"Saskatchewan",YT:"Yukon"};
+
+const US_GRID = [
+["AK",null,null,null,null,null,null,null,null,null,null,"ME"],
+[null,null,null,null,null,"WI",null,null,null,null,"VT","NH"],
+["WA","MT","ND","MN",null,null,null,null,null,"NY","MA",null],
+["OR","ID","WY","SD","NE","IA","IL","IN","MI","OH","PA","NJ"],
+["CA","NV","UT","CO","KS","MO","KY","WV","VA","MD","DE","CT"],
+["AZ","NM","OK","AR","LA","MS","AL","GA","TN","SC","NC",null],
+["HI",null,null,null,null,"TX",null,null,"FL",null,null,null],
+[null,null,null,null,null,null,null,null,null,null,null,"RI"]
+];
+const CA_GRID = [
+[null,null,"YT","NU",null,null,null,"NL"],
+[null,null,"NT",null,null,null,null,null],
+["BC","AB","SK","MB","ON","QC",null,null],
+[null,null,null,null,null,"NB","PE","NS"]
+];
+
+function casinoCount(country, location){
+  return casinos.filter(function(c){
+    return c.country === country && c.states.some(function(s){
+      return s.trim().toLowerCase() === location.trim().toLowerCase();
+    });
+  }).length;
+}
+
+function renderMap(country){
+  var grid = country === "USA" ? US_GRID : CA_GRID;
+  var names = country === "USA" ? US_NAMES : CA_NAMES;
+  var wrap = document.getElementById('map-wrap');
+  var map = document.getElementById('tile-map');
+  wrap.style.display = 'block';
+  document.getElementById('map-prompt').textContent =
+    country === "USA" ? "Step 2 \u2014 tap your state:" : "Step 2 \u2014 tap your province or territory:";
+  map.innerHTML = '';
+  map.className = country === "USA" ? 'usa' : 'canada';
+  grid.forEach(function(row){
+    row.forEach(function(abbr){
+      var tile = document.createElement('div');
+      if(!abbr){ tile.className = 'tile empty'; }
+      else{
+        var full = names[abbr];
+        var n = casinoCount(country, full);
+        tile.className = 'tile' + (n === 0 ? ' none' : '');
+        tile.innerHTML = '<span class="abbr">' + abbr + '</span><span class="cnt">' + n + '</span>';
+        tile.title = full + ' \u2014 ' + n + ' casinos';
+        (function(countryCopy, fullCopy, tileCopy){
+          tileCopy.addEventListener('click', function(){
+            document.querySelectorAll('#tile-map .tile.sel').forEach(function(t){ t.classList.remove('sel'); });
+            tileCopy.classList.add('sel');
+            document.getElementById('country').value = countryCopy;
+            populateLocations();
+            document.getElementById('location').value = fullCopy;
+            findCasinos();
+            document.getElementById('results').scrollIntoView({behavior:'smooth'});
+          });
+        })(country, full, tile);
+      }
+      map.appendChild(tile);
+    });
+  });
+  document.querySelectorAll('.country-btn').forEach(function(b){
+    b.classList.toggle('active', b.dataset.country === country);
+  });
+}
+
+document.querySelectorAll('.country-btn').forEach(function(b){
+  b.addEventListener('click', function(){ renderMap(b.dataset.country); });
+});
+
+function findCasinos(){
+
+    const country =
+    document.getElementById('country').value.trim();
+
+    const location =
+    document.getElementById('location').value.trim();
+
+    const results =
+    document.getElementById('results');
+
+    results.innerHTML = '';
+
+    const filtered = casinos.filter(casino => {
+
+        return (
+            casino.country === country &&
+            casino.states.some(state =>
+                state.trim().toLowerCase() ===
+                location.trim().toLowerCase()
+            )
+        );
+
+    });
+
+    if(filtered.length === 0){
+
+        results.innerHTML = `
+
+        <div class="card">
+
+            <h3>No Casinos Found</h3>
+
+            <p>
+                No available casinos currently found for this location.
+            </p>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+    filtered.forEach(casino => {
+
+        results.innerHTML += `
+
+        <div class="casino-card">
+
+            <div class="casino-image">
+
+                <img src="${casino.image}" alt="${casino.name}">
+
+            </div>
+
+            <div class="casino-content">
+
+                <div class="rank">
+                    ${casino.rank}
+                </div>
+
+                <div class="casino-title">
+                    ${casino.name}
+                </div>
+
+                <p>
+                    ${casino.description}
+                </p>
+
+                <ul class="feature-list">
+
+                    ${casino.features.map(feature =>
+                        `<li>${feature}</li>`
+                    ).join('')}
+
+                </ul>
+
+                <a href="${casino.button || '#'}"
+                target="_blank"
+                class="join-btn">
+
+                JOIN NOW
+
+                </a>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+</script>
+</body>
+</html>
